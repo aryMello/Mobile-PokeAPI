@@ -1,5 +1,6 @@
 package com.example.pokev2
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -15,7 +16,7 @@ class CreateAccountActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_account)
 
-        // Initialize Firebase Auth
+        // inicia firebase
         auth = FirebaseAuth.getInstance()
 
         val nameEditText: EditText = findViewById(R.id.nameEditText)
@@ -40,11 +41,14 @@ class CreateAccountActivity : AppCompatActivity() {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign up success
+                    // criado com sucesso, mostra mensagem
                     Toast.makeText(this, "Conta criada com sucesso!", Toast.LENGTH_SHORT).show()
-                    // You can redirect to another activity here
+                    // Navega para login
+                    val intent = Intent(this, LoginActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 } else {
-                    // If sign up fails, display a message to the user
+                    // caso falhe, mostra error ao criar conta
                     Toast.makeText(this, "Falha ao criar conta: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }

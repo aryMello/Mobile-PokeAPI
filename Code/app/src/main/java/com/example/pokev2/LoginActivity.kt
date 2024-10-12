@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Initialize Firebase Auth
+        // Inicializa firebase
         auth = FirebaseAuth.getInstance()
 
         val emailEditText: EditText = findViewById(R.id.emailEditText)
@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         createAccountText.setOnClickListener {
-            // Navigate to CreateAccountActivity
+            // Navega para criar conta
             val intent = Intent(this, CreateAccountActivity::class.java)
             startActivity(intent)
         }
@@ -46,11 +46,14 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Login success
+                    // login com sucesso
                     Toast.makeText(this, "Usuario logado com sucesso!", Toast.LENGTH_SHORT).show()
-                    // You can redirect to another activity here
+                    // Navega para pokedex
+                    val intent = Intent(this, PokedexActivity::class.java) // Replace HomeActivity with your desired activity
+                    startActivity(intent)
+                    finish()
                 } else {
-                    // If login fails, display a message to the user
+                    // se falhar mostrar error
                     Toast.makeText(this, "Falha ao logar: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }
