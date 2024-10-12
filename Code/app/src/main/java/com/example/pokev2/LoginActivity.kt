@@ -1,4 +1,5 @@
 package com.example.pokev2
+
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -16,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // Inicializa firebase
+        // inicializa firebase
         auth = FirebaseAuth.getInstance()
 
         val emailEditText: EditText = findViewById(R.id.emailEditText)
@@ -46,14 +47,14 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // login com sucesso
+                    // logado com sucesso
                     Toast.makeText(this, "Usuario logado com sucesso!", Toast.LENGTH_SHORT).show()
-                    // Navega para pokedex
-                    val intent = Intent(this, PokedexActivity::class.java) // Replace HomeActivity with your desired activity
+                    // Navega para PokemonActivity
+                    val intent = Intent(this, PokemonActivity::class.java) // Redireciona para PokemonActivity
                     startActivity(intent)
-                    finish()
+                    finish() // fecha LoginActivity
                 } else {
-                    // se falhar mostrar error
+                    // Show error message
                     Toast.makeText(this, "Falha ao logar: ${task.exception?.message}", Toast.LENGTH_LONG).show()
                 }
             }

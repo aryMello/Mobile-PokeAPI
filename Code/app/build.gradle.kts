@@ -47,7 +47,14 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.firebase.auth.ktx)
+    implementation("androidx.recyclerview:recyclerview:1.2.1") // RecyclerView dependency
+    implementation("com.squareup.retrofit2:retrofit:2.9.0") // Retrofit dependency
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0") // Retrofit Gson converter
+    implementation("com.squareup.picasso:picasso:2.8") // Picasso for image loading
+
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
 }
