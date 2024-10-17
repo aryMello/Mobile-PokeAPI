@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">Pokev2</string>
+    <string name="gcm_defaultSenderId" translatable="false">40533084387</string>
+    <string name="google_api_key" translatable="false">AIzaSyDjnLkFF4O7DFb8Pa6NqOasS9pcnJO47K8</string>
+    <string name="google_app_id" translatable="false">1:40533084387:android:b12110bb98089f11af9dd6</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDjnLkFF4O7DFb8Pa6NqOasS9pcnJO47K8</string>
+    <string name="google_storage_bucket" translatable="false">pokedexmobile-2172b.appspot.com</string>
+    <string name="project_id" translatable="false">pokedexmobile-2172b</string>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">#6200EE</item>
+        <item name="colorPrimaryDark">#3700B3</item>
+        <item name="colorAccent">#03DAC5</item>
+    </style>
+    <style name="Base.Theme.Pokev2" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="ButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">#000000</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="EditTextStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+    </style>
+    <style name="Theme.Pokev2" parent="Base.Theme.Pokev2"/>
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    >
+
+    <!-- Titulo e barra de pesquisa -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pokédex"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/searchEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pesquisar pokémon"
+            android:inputType="text"
+            android:drawableStart="@drawable/ic_search"
+            android:backgroundTint="@color/grey"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:layout_marginBottom="16dp"/>
+    </LinearLayout>
+
+    <!-- Pokémon Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/pokemonRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="616dp"
+        android:layout_gravity="top"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="80dp"
+        android:clipToPadding="false"
+        android:padding="16dp"
+        android:scrollbars="vertical" />
+
+    <!-- Background -->
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pokeball"
+        android:scaleType="fitStart"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:alpha="0.1" />
+</FrameLayout>
