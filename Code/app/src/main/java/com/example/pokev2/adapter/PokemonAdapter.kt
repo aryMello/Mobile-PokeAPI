@@ -20,16 +20,16 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
         private val typeTextView: TextView = itemView.findViewById(R.id.pokemonTypeTextView)
 
         fun bind(pokemon: Pokemon) {
-            nameTextView.text = pokemon.name.capitalize() // Capitalize for better visibility
-            typeTextView.text = pokemon.types.joinToString(", ") // Show types as a string
-            Picasso.get().load(pokemon.imageUrl).into(imageView) // Load image with Picasso
+            nameTextView.text = pokemon.name.capitalize() // bota em capital
+            typeTextView.text = pokemon.types.joinToString(", ") // usa type como string
+            Picasso.get().load(pokemon.imageUrl).into(imageView) // carrega imagem usando o picasso api
 
-            // Set background color based on the first type
-            val type = pokemon.types.firstOrNull()?.toLowerCase() ?: "normal" // Default type
-            typeTextView.setBackgroundColor(getColorForType(itemView.context, type)) // Set background color
+            // ajusta o plano de fundo de acordo com o primeiro tipo
+            val type = pokemon.types.firstOrNull()?.toLowerCase() ?: "normal" // Default
+            typeTextView.setBackgroundColor(getColorForType(itemView.context, type)) // muda a cor do plano de fundo do tipo
         }
 
-        // Function to get the color for each type
+        // carraga a cor para cada tipo
         private fun getColorForType(context: Context, type: String): Int {
             return when (type) {
                 "fire" -> ContextCompat.getColor(context, R.color.fire)
@@ -41,8 +41,9 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
                 "psychic" -> ContextCompat.getColor(context, R.color.psychic)
                 "ghost" -> ContextCompat.getColor(context, R.color.ghost)
                 "fighting" -> ContextCompat.getColor(context, R.color.fighting)
-                // Add more types as needed
-                else -> ContextCompat.getColor(context, R.color.normal) // Default color
+                "fairy" -> ContextCompat.getColor(context, R.color.fairy)
+                "rock" -> ContextCompat.getColor(context, R.color.rock)
+                else -> ContextCompat.getColor(context, R.color.normal) // Default
             }
         }
     }

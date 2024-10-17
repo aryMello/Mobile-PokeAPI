@@ -36,25 +36,8 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="859e8c06-b57d-432f-a4f4-8bebbb370c72" name="Changes" comment="add pokeapi logica e suas classes e routers (model, api, adapter)">
-      <change afterPath="$PROJECT_DIR$/.idea/appInsightsSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/app/src/main/res/drawable/ic_search.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/app/src/main/res/drawable/pokeball.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Code/app/src/main/res/drawable/rounded_button.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetSelector.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+    <list default="true" id="859e8c06-b57d-432f-a4f4-8bebbb370c72" name="Changes" comment="add new CSS for login, create, and main pokedex page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/java/com/example/pokev2/PokedexActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/java/com/example/pokev2/PokedexActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/java/com/example/pokev2/adapter/PokemonAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/java/com/example/pokev2/adapter/PokemonAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/drawable/_328332_middle_removebg_preview.png" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/drawable/pokedex.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/drawable/card_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_create_account.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_create_account.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/layout/item_pokemon.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/layout/item_pokemon.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Code/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Code/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +47,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[DeviceId(pluginId=PhysicalDevice, isTemplate=false, identifier=serial=RXCW6019MAL)]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -149,34 +132,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Android App.Code.Pokev2.app.executor": "Run",
-    "Android App.CreateAccountActivity (3).executor": "Run",
-    "Android App.LoginActivity (1).executor": "Run",
-    "Android App.LoginActivity (2).executor": "Run",
-    "Android App.LoginActivity.executor": "Run",
-    "Android App.PokemonActivity.executor": "Run",
-    "Android App.app.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "TEST",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/onlin/AndroidStudioProjects/Pokev2/Code/settings.gradle.kts",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Android App.Code.Pokev2.app.executor&quot;: &quot;Run&quot;,
+    &quot;Android App.CreateAccountActivity (3).executor&quot;: &quot;Run&quot;,
+    &quot;Android App.LoginActivity (1).executor&quot;: &quot;Run&quot;,
+    &quot;Android App.LoginActivity (2).executor&quot;: &quot;Run&quot;,
+    &quot;Android App.LoginActivity.executor&quot;: &quot;Run&quot;,
+    &quot;Android App.PokemonActivity.executor&quot;: &quot;Run&quot;,
+    &quot;Android App.app.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;TEST&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/onlin/AndroidStudioProjects/Pokev2/Code/settings.gradle.kts&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   },
-  "keyToStringList": {
-    "kotlin-gradle-user-dirs": [
-      "C:\\Users\\onlin\\.gradle"
+  &quot;keyToStringList&quot;: {
+    &quot;kotlin-gradle-user-dirs&quot;: [
+      &quot;C:\\Users\\onlin\\.gradle&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\onlin\AndroidStudioProjects\Pokev2\Code\app\src\main\res\drawable" />
@@ -827,7 +809,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728710656298</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add new CSS for login, create, and main pokedex page">
+      <option name="closed" value="true" />
+      <created>1728858339978</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1728858339978</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -845,6 +835,7 @@
     <MESSAGE value="initial commit" />
     <MESSAGE value="add pokedexactivity class" />
     <MESSAGE value="add pokeapi logica e suas classes e routers (model, api, adapter)" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pokeapi logica e suas classes e routers (model, api, adapter)" />
+    <MESSAGE value="add new CSS for login, create, and main pokedex page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add new CSS for login, create, and main pokedex page" />
   </component>
 </project>
