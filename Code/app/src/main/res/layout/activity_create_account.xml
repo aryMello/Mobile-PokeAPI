@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        android:padding="16dp">
+        android:padding="32dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -64,5 +64,14 @@
             android:background="@drawable/rounded_button"
             android:textColor="@color/white"
             android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/loginToAccountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Já possui conta?"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            android:layout_marginTop="16dp"/>
     </LinearLayout>
 </FrameLayout>

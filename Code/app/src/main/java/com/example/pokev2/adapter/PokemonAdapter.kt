@@ -42,7 +42,10 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
                 "ghost" -> ContextCompat.getColor(context, R.color.ghost)
                 "fighting" -> ContextCompat.getColor(context, R.color.fighting)
                 "fairy" -> ContextCompat.getColor(context, R.color.fairy)
+                "ground" -> ContextCompat.getColor(context, R.color.ground)
+                "bug" -> ContextCompat.getColor(context, R.color.bug)
                 "rock" -> ContextCompat.getColor(context, R.color.rock)
+
                 else -> ContextCompat.getColor(context, R.color.normal) // Default
             }
         }

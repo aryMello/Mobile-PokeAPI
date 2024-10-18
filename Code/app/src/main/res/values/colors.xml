@@ -8,6 +8,7 @@
     <color name="backgroundLight">#F5F5F5</color>
     <color name="white">#FFFFFF</color>
 
+    //cor para temas
     <color name="black">#303943</color>
     <color name="blue">#429BED</color>
     <color name="brown">#B1736C</color>
@@ -26,6 +27,7 @@
     <color name="teal">#4FC1A6</color>
     <color name="yellow">#F6C747</color>
 
+    //cor pokemons
     <color name="fire">#FF5733</color>
     <color name="water">#007BFF</color>
     <color name="grass">#28A745</color>
@@ -36,7 +38,10 @@
     <color name="ghost">#800080</color>
     <color name="fighting">#DC3545</color>
     <color name="fairy">#F69ECA</color>
-    <color name="rock">#814E03</color>
+    <color name="ground">#814E03</color>
+    <color name="rock">#BD7101</color>
+    <color name="bug">#14F80C</color>
+
 
 
 

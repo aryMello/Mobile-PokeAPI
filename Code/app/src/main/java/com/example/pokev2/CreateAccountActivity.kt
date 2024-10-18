@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
@@ -23,6 +24,10 @@ class CreateAccountActivity : AppCompatActivity() {
         val emailEditText: EditText = findViewById(R.id.emailEditText)
         val passwordEditText: EditText = findViewById(R.id.passwordEditText)
         val createAccountButton: Button = findViewById(R.id.createAccountButton)
+        val loginToAccountText: TextView = findViewById(R.id.loginToAccountText)
+
+
+
 
         createAccountButton.setOnClickListener {
             val name = nameEditText.text.toString()
@@ -35,6 +40,13 @@ class CreateAccountActivity : AppCompatActivity() {
                 createAccount(email, password)
             }
         }
+
+        loginToAccountText.setOnClickListener {
+            // Navega logar com conta
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 
     private fun createAccount(email: String, password: String) {
@@ -54,4 +66,5 @@ class CreateAccountActivity : AppCompatActivity() {
             }
     }
 }
+
 
