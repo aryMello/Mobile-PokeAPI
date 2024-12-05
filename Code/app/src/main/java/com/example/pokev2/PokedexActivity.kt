@@ -1,14 +1,21 @@
 package com.example.pokev2
 
+import android.content.Intent
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pokev2.adapter.PokemonAdapter
 import com.example.pokev2.model.Pokemon
 import com.example.pokev2.model.PokemonListResponse
+import com.example.pokev2.ui.MinhaPokedexActivity
+import com.example.pokev2.ui.SettingsActivity
 import com.example.pokev2.utils.RetrofitClient
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -26,8 +33,28 @@ class PokemonActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         recyclerView = findViewById(R.id.pokemonRecyclerView)
-        recyclerView.layoutManager = GridLayoutManager(this, 3)
+        recyclerView.layoutManager = GridLayoutManager(this, 2)
 
+        val settingsButton = findViewById<Button>(R.id.settingsButton)
+        settingsButton.setOnClickListener {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        val addButton = findViewById<ImageButton>(R.id.addButton)
+        addButton.setOnClickListener {
+            val intent = Intent(this, MinhaPokedexActivity::class.java)
+            startActivity(intent)
+        }
+
+        val searchEditText = findViewById<EditText>(R.id.searchEditText)
+        searchEditText.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                filterPokemon(s.toString())
+            }
+            override fun afterTextChanged(s: Editable?) {}
+        })
 
         fetchPokemonData()
     }
@@ -39,25 +66,37 @@ class PokemonActivity : AppCompatActivity() {
                 val pokemonSummaries = pokemonListResponse.results
 
                 for (pokemonSummary in pokemonSummaries) {
-                    val id = pokemonSummary.url.split("/".toRegex()).dropLast(1).last().toInt()
-                    val pokemonResponse = RetrofitClient.pokeApiService.getPokemon(id)
+                    val game_index = pokemonSummary.url.split("/".toRegex()).dropLast(1).last().toInt()
+                    val pokemonResponse = RetrofitClient.pokeApiService.getPokemon(game_index)
 
-                    // Extrai tipo de PokemonResponse
-                    val types = pokemonResponse.types.map { it.type.name } // pega nome dos tipos
-                    val pokemon = Pokemon(pokemonResponse.name, pokemonResponse.sprites.front_default, types)
+
+                    val pokemon = Pokemon(
+                        game_index = game_index,
+                        name = pokemonResponse.name.capitalize(),
+                        imageUrl = pokemonResponse.sprites.front_default ?: "",
+                        types = pokemonResponse.types.map { it.type.name },
+                        height = "${pokemonResponse.height / 10.0}m",
+                        weight = "${pokemonResponse.weight / 10.0}kg"
+                    )
                     pokemonList.add(pokemon)
                 }
 
-                // manda UI para main thread
                 withContext(Dispatchers.Main) {
-                    adapter = PokemonAdapter(pokemonList)
+                    adapter = PokemonAdapter(pokemonList.toMutableList())
                     recyclerView.adapter = adapter
                 }
             } catch (e: Exception) {
-                Log.e("PokemonActivity", "Error ao fetch data", e)
+                Log.e("PokemonActivity", "Error fetching data", e)
             }
         }
     }
 
-
+    private fun filterPokemon(query: String?) {
+        val lowercaseQuery = query?.lowercase() ?: ""
+        val filteredList = pokemonList.filter { pokemon ->
+            pokemon.name.lowercase().contains(lowercaseQuery) ||
+                    pokemon.types.any { type -> type.lowercase().contains(lowercaseQuery) }
+        }
+        adapter.updateList(filteredList)
+    }
 }

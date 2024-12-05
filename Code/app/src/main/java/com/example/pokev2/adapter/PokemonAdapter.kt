@@ -1,6 +1,7 @@
 package com.example.pokev2.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +9,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import com.example.pokev2.AboutPokemonActivity
 import com.example.pokev2.R
 import com.example.pokev2.model.Pokemon
 import com.squareup.picasso.Picasso
 
-class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
+class PokemonAdapter(
+    private var pokemonList: List<Pokemon>,
+    private val onItemClick: ((Pokemon) -> Unit)? = null
+) : RecyclerView.Adapter<PokemonAdapter.PokemonViewHolder>() {
 
     inner class PokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.pokemonNameTextView)
@@ -20,16 +25,32 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
         private val typeTextView: TextView = itemView.findViewById(R.id.pokemonTypeTextView)
 
         fun bind(pokemon: Pokemon) {
-            nameTextView.text = pokemon.name.capitalize() // bota em capital
-            typeTextView.text = pokemon.types.joinToString(", ") // usa type como string
-            Picasso.get().load(pokemon.imageUrl).into(imageView) // carrega imagem usando o picasso api
+            nameTextView.text = pokemon.name.capitalize()
+            typeTextView.text = pokemon.types.joinToString(", ")
+            Picasso.get().load(pokemon.imageUrl).into(imageView)
 
-            // ajusta o plano de fundo de acordo com o primeiro tipo
-            val type = pokemon.types.firstOrNull()?.toLowerCase() ?: "normal" // Default
-            typeTextView.setBackgroundColor(getColorForType(itemView.context, type)) // muda a cor do plano de fundo do tipo
+            val type = pokemon.types.firstOrNull()?.toLowerCase() ?: "normal"
+            typeTextView.setTextColor(getColorForType(itemView.context, type))
+
+            itemView.setOnClickListener {
+                if (onItemClick != null) {
+                    onItemClick?.let { it1 -> it1(pokemon) }
+                } else {
+                    val context = itemView.context
+                    val intent = Intent(context, AboutPokemonActivity::class.java).apply {
+                        putExtra("pokemonName", pokemon.name)
+                        putExtra("pokemonImage", pokemon.imageUrl)
+                        putExtra("pokemonTypes", pokemon.types.toTypedArray())
+                        putExtra("pokemonHeight", pokemon.height)
+                        putExtra("pokemonWeight", pokemon.weight)
+                        putExtra("pokemonbase_experience", pokemon.base_experience.toString())
+                        putExtra("pokemonId", pokemon.game_index)
+                    }
+                    context.startActivity(intent)
+                }
+            }
         }
 
-        // carraga a cor para cada tipo
         private fun getColorForType(context: Context, type: String): Int {
             return when (type) {
                 "fire" -> ContextCompat.getColor(context, R.color.fire)
@@ -42,8 +63,10 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
                 "ghost" -> ContextCompat.getColor(context, R.color.ghost)
                 "fighting" -> ContextCompat.getColor(context, R.color.fighting)
                 "fairy" -> ContextCompat.getColor(context, R.color.fairy)
+                "ground" -> ContextCompat.getColor(context, R.color.ground)
+                "bug" -> ContextCompat.getColor(context, R.color.bug)
                 "rock" -> ContextCompat.getColor(context, R.color.rock)
-                else -> ContextCompat.getColor(context, R.color.normal) // Default
+                else -> ContextCompat.getColor(context, R.color.normal)
             }
         }
     }
@@ -58,4 +81,9 @@ class PokemonAdapter(private val pokemonList: List<Pokemon>) : RecyclerView.Adap
     }
 
     override fun getItemCount() = pokemonList.size
+
+    fun updateList(newList: List<Pokemon>) {
+        pokemonList = newList
+        notifyDataSetChanged()
+    }
 }

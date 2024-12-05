@@ -4,10 +4,19 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    >
+    android:background="@color/white">
 
-    <!-- Titulo e barra de pesquisa -->
+    <Button
+        android:id="@+id/settingsButton"
+        android:layout_width="40dp"
+        android:layout_height="36dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="@drawable/ic_cog"
+        android:clickable="true"
+        />
+
+    <!-- Title and Search Bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -47,7 +56,7 @@
         android:padding="16dp"
         android:scrollbars="vertical" />
 
-    <!-- Background -->
+    <!-- Background Image (Pokeball) -->
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -57,4 +66,14 @@
         android:layout_marginStart="16dp"
         android:layout_marginBottom="16dp"
         android:alpha="0.1" />
+
+    <ImageButton
+        android:id="@+id/addButton"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/ic_add"
+        android:contentDescription="Add Pokémon" />
+
 </FrameLayout>

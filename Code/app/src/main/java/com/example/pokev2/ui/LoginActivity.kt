@@ -1,4 +1,4 @@
-package com.example.pokev2
+package com.example.pokev2.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.pokev2.PokemonActivity
+import com.example.pokev2.R
+import com.example.pokev2.adapter.PokemonAdapter
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {

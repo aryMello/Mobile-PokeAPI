@@ -18,24 +18,37 @@
             android:id="@+id/pokemonImageView"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:scaleType="centerCrop" />
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true" />
 
         <TextView
             android:id="@+id/pokemonNameTextView"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:paddingTop="8dp"/>
+            android:paddingTop="8dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="12sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:maxLines="1"
+            android:gravity="center"/>
 
         <TextView
             android:id="@+id/pokemonTypeTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="14sp"
-            android:textColor="@android:color/darker_gray"
+            android:textColor="@android:color/black"
             android:paddingTop="4dp"
             android:background="@android:color/transparent"
+            android:layout_gravity="center_horizontal"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeMaxTextSize="18sp"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:textStyle="bold"
             />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

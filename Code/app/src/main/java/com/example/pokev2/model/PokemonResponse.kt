@@ -1,10 +1,13 @@
 package com.example.pokev2.model
 
 data class PokemonResponse(
+    val game_index: Int,
     val name: String,
-    val sprites: Sprites,
-    val types: List<PokemonType>,
-    val imageURL: String
+    val imageUrl: String,
+    val types: List<String>,
+    val height: String,
+    val weight: String,
+    val base_experience: Int,
 )
 
 data class Sprites(
