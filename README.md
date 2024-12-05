@@ -13,6 +13,10 @@
 
 https://www.figma.com/file/wnxEIH8TGpnLTKQu1hfmyK?node-id=0:1&locale=en&type=design
 
+## 🎥 Video
+
+https://www.youtube.com/watch?v=toW6OCbrorQ
+
 # Documento de Requisitos - Aplicativo Mobile Pokedéx
 
 ## Visão Geral
