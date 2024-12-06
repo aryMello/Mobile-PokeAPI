@@ -93,7 +93,7 @@ O aplicativo Pokédex será desenvolvido em Kotlin para Android e consumirá dad
 - Na Aba principal "Pokedéx", no canto superior direito terá uma engrenagem, que ao ser clicada abre a aba de configurações.
 - A tela de configurações tem as opções de "Alterar senha" ou de "Sair da conta".
 - Clicar em "Alterar senha" o usuário será redirecionado para uma tela com os campos de "Senha atual" e "Nova senha", com os botões de "Confirmar" e "Cancelar".
-- Caso o usuário clique em confirmar e as senhas coincidirem, a senha do usuário será atualizada, caso clique em "Cancelar", a operação será cancelada e o usuário será redirecionado
+- Caso o usuário clique em confirmar e as senhas coincidirem, a senha do usuário será atualizada, caso clique em "Cancelar", a operação será cancelada e o usuário será redirecionado.
 
 
 ## Tecnologias e Ferramentas
